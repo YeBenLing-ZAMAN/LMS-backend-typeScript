@@ -1,18 +1,19 @@
 import mongoose from "mongoose";
 import app from "./app";
 import config from "./config/index";
+import { errorLogger, infoLogger } from "./shared/logger";
 
 async function DatabaseConnection() {
   try {
     await mongoose.connect(config.dataBase_url as string);
-    console.log(`Database is connected successfully`);
+    infoLogger.info(`Database is connected successfully`);
 
     /* port listing from here  */
     app.listen(config.port, () => {
-      console.log(`app listening on port ${config.port}`);
+      infoLogger.info(`app listening on port ${config.port}`);
     });
   } catch (err) {
-    console.log(`Fail to connected DB`, err);
+    errorLogger.error(`Fail to connected DB`, err);
   }
 }
 

@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\FILE 2\\programming code\\apollo course\\mil-03\\module-11\\logs\\winston\\successes\\.d9d5086002e769467200e9967ed704efe311b89f-audit.json",
+    "files": [
+        {
+            "date": 1686141056025,
+            "name": "D:\\FILE 2\\programming code\\apollo course\\mil-03\\module-11\\logs\\winston\\successes\\project-2023-06-07-18-success.log",
+            "hash": "8a4dad266825b4a233b271dc3f2cc6fd32c89316464c20cd4e56d2b511bab0f6"
+        }
+    ],
+    "hashType": "sha256"
+}
