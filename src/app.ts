@@ -1,7 +1,7 @@
 import express, { Application } from "express";
 const app: Application = express();
 import cors from "cors";
-import usersRouter from "./app/modules/users/users.routes";
+import { UserRoutes } from "./app/modules/users/user.routes";
 import globalErrorHandler from "./app/middlewares/globalErrorHandler";
 
 app.use(cors());
@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 /* application route */
-app.use("/api/v1/users", usersRouter);
+app.use("/api/v1/users", UserRoutes);
 
 /* for testing */
 // app.get("/", (_req: Request, res: Response, next: NextFunction) => {
