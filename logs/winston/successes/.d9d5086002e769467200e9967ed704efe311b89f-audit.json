@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\FILE 2\\programming code\\apollo course\\mil-03\\module-11\\logs\\winston\\successes\\.d9d5086002e769467200e9967ed704efe311b89f-audit.json",
+    "files": [
+        {
+            "date": 1686379061536,
+            "name": "D:\\FILE 2\\programming code\\apollo course\\mil-03\\module-11\\logs\\winston\\successes\\project-2023-06-10-12-success.log",
+            "hash": "8ff521d6524b6ae93784c7641defd1ee1f9032c3b7035081db5c58ace255f994"
+        },
+        {
+            "date": 1686403349768,
+            "name": "D:\\FILE 2\\programming code\\apollo course\\mil-03\\module-11\\logs\\winston\\successes\\project-2023-06-10-19-success.log",
+            "hash": "2680405d6bb330abeff4c80145a380a49180b727380641497d71c38abacebf33"
+        }
+    ],
+    "hashType": "sha256"
+}
