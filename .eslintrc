@@ -9,7 +9,7 @@
 
   "rules": {
     // "no-unused-vars": "error",
-    "no-console":"error",
+    "no-console":"warn",
     // "no-undef":"error",
     // "no-unused-expressions":"error",
     // "no-unreachable":"error",
@@ -22,7 +22,7 @@
     "node":true
   },
   "globals":{
-    "process": true
+    "process": "readonly"
   }
 }
 

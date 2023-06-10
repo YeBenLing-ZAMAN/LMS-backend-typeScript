@@ -6,24 +6,14 @@
     "auditLog": "D:\\FILE 2\\programming code\\apollo course\\mil-03\\module-11\\logs\\winston\\errors\\.ba3515db04e3d887d7b6248bf071bcc8925117a9-audit.json",
     "files": [
         {
-            "date": 1686141056042,
-            "name": "D:\\FILE 2\\programming code\\apollo course\\mil-03\\module-11\\logs\\winston\\errors\\project-2023-06-07-18-error.log",
-            "hash": "067f4eb22348ccc2d77472d1616c8c286a07b93ce67d7554280f7f84eb9bd44c"
+            "date": 1686379061549,
+            "name": "D:\\FILE 2\\programming code\\apollo course\\mil-03\\module-11\\logs\\winston\\errors\\project-2023-06-10-12-error.log",
+            "hash": "ffb02724ffcbfab4223a0b9efbebc55d9820feb0dcea07753a68625b0fd882d3"
         },
         {
-            "date": 1686363036908,
-            "name": "D:\\FILE 2\\programming code\\apollo course\\mil-03\\module-11\\logs\\winston\\errors\\project-2023-06-10-08-error.log",
-            "hash": "3037f52f89908630de43dc87df681b3f9483b006850e2c3a288f5eac61060f7e"
-        },
-        {
-            "date": 1686366203550,
-            "name": "D:\\FILE 2\\programming code\\apollo course\\mil-03\\module-11\\logs\\winston\\errors\\project-2023-06-10-09-error.log",
-            "hash": "da4a05e29b0cdba5c7117dfc74e4eb5e772b8b7342efd1f15303b466fe0afb07"
-        },
-        {
-            "date": 1686371001786,
-            "name": "D:\\FILE 2\\programming code\\apollo course\\mil-03\\module-11\\logs\\winston\\errors\\project-2023-06-10-10-error.log",
-            "hash": "fbaadd878bb06b6aca1951dc28562127c03119f46121ffdef26e97b9f89bb138"
+            "date": 1686403349772,
+            "name": "D:\\FILE 2\\programming code\\apollo course\\mil-03\\module-11\\logs\\winston\\errors\\project-2023-06-10-19-error.log",
+            "hash": "c4681b8704ce825ca6c8b10965b27affc19b96df6adc4c76c33766d168531c85"
         }
     ],
     "hashType": "sha256"
