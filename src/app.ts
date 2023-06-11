@@ -4,7 +4,7 @@ const app: Application = express();
 import cors from "cors";
 import globalErrorHandler from "./app/middleware/globalErrorHandler";
 import routers from "./app/routes";
-import notFoundHandler from "./app/middleware/notFoundHander";
+import notFoundHandler from "./app/middleware/notFoundHandler";
 // import ApiError from "./errors/ApiError";
 
 app.use(cors());
