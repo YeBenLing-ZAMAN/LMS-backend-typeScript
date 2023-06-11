@@ -1,9 +1,10 @@
-import express, { Application } from "express";
+import express, { Application, NextFunction, Request, Response } from "express";
 // import { NextFunction, Request, Response} from "express";
 const app: Application = express();
 import cors from "cors";
 import globalErrorHandler from "./app/middleware/globalErrorHandler";
 import routers from "./app/routes";
+import httpStatus from "http-status";
 // import ApiError from "./errors/ApiError";
 
 app.use(cors());
@@ -24,5 +25,20 @@ app.use("/api/v1", routers);
 
 /* gobal error handle */
 app.use(globalErrorHandler);
+
+/* handle not found */
+app.use((req: Request, res: Response, next: NextFunction) => {
+  res.status(httpStatus.NOT_FOUND).json({
+    success: false,
+    message: "Not found !!",
+    errorMessage: [
+      {
+        path: req.originalUrl,
+        message: "API not found !!",
+      },
+    ],
+  });
+  next();
+});
 
 export default app;
