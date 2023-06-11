@@ -2,8 +2,8 @@ import express, { Application } from "express";
 // import { NextFunction, Request, Response} from "express";
 const app: Application = express();
 import cors from "cors";
-import { UserRoutes } from "./app/modules/users/user.routes";
 import globalErrorHandler from "./app/middleware/globalErrorHandler";
+import routers from "./app/routes";
 // import ApiError from "./errors/ApiError";
 
 app.use(cors());
@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 /* application route */
-app.use("/api/v1/users", UserRoutes);
+app.use("/api/v1", routers);
 
 /* for testing */
 // app.get("/", (_req: Request, res: Response, next: NextFunction) => {
