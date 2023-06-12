@@ -49,7 +49,7 @@ const getAllDepartments = async (
     andConditions.length > 0 ? { $and: andConditions } : {};
 
   const result = await AcademicDepartment.find(whereConditions)
-    .populate("academicFaculty")
+    .populate("academicFaculty") //just id diye populate korate hobe
     .sort(sortConditions)
     .skip(skip)
     .limit(limit);
@@ -78,9 +78,8 @@ const createDepartment = async (
 const getSingleDepartment = async (
   id: string
 ): Promise<IAcademicDepartment | null> => {
-  const result = await AcademicDepartment.findById(id).populate(
-    "academicFaculty"
-  );
+  const result = await AcademicDepartment.findById(id);
+  // .populate("academicFaculty");   // id see with populated
   return result;
 };
 

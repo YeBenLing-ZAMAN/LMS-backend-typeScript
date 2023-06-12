@@ -51,7 +51,6 @@ const getAllFaculty = async (
 
   const whereConditions =
     andConditions.length > 0 ? { $and: andConditions } : {};
-
   const result = await AcademicFaculty.find(whereConditions)
     .sort(sortCondition)
     .skip(skip)

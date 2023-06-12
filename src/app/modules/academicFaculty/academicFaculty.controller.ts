@@ -7,7 +7,6 @@ import { AcademicFacultyService } from "./academicFaculty.service";
 import pick from "../../../shared/pick";
 import { academicFacultyFilterableFields } from "./academicFaculty.constants";
 import { paginationFields } from "../../constants/pagination";
-import { AcademicSemesterService } from "../academicSemester/academicSemester.service";
 
 const createFaculty = catchAsync(async (req: Request, res: Response) => {
   const { ...academicFacultyData } = req.body;
@@ -25,7 +24,7 @@ const createFaculty = catchAsync(async (req: Request, res: Response) => {
 const getAllFaculty = catchAsync(async (req: Request, res: Response) => {
   const filters = pick(req.query, academicFacultyFilterableFields);
   const paginationOptions = pick(req.query, paginationFields);
-  const result = await AcademicSemesterService.getAllSemesters(
+  const result = await AcademicFacultyService.getAllFaculty(
     filters,
     paginationOptions
   );
