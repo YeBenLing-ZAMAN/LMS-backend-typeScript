@@ -64,7 +64,7 @@ const updateAcademicSemesterZodSchema = z
     }
   );
 
-export const academicSemesterValidation = {
+export const AcademicSemesterValidation = {
   createAcademicSemesterZodSchema,
   updateAcademicSemesterZodSchema,
 };
