@@ -15,8 +15,9 @@ const createStudent = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-const getAllUser = catchAsync(async (req: Request, res: Response) => {
-  const result = await UserService.getAllUser();
+const createFaculty = catchAsync(async (req: Request, res: Response) => {
+  const { faculty, ...userData } = req.body;
+  const result = await UserService.createFaculty(faculty, userData);
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
@@ -25,7 +26,18 @@ const getAllUser = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const getAllUser = catchAsync(async (req: Request, res: Response) => {
+  const result = await UserService.getAllUser();
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "Get all user data!",
+    data: result,
+  });
+});
+
 export const UserController = {
   createStudent,
+  createFaculty,
   getAllUser,
 };

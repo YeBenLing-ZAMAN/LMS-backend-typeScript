@@ -7,4 +7,5 @@ export default {
   port: process.env.PORT,
   dataBase_url: process.env.DB_URL,
   default_student_password: process.env.DEFAULT_STUDENT_PASSWORD,
+  default_faculty_password: process.env.DEFAULT_FACULTY_PASSWORD,
 };
