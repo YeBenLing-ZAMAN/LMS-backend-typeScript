@@ -8,6 +8,8 @@ import { IGenericResponse } from "../../../interface.ts/common";
 import { academicFacultySearchableFields } from "./academicFaculty.constants";
 import { paginationHelper } from "../../../helpers/paginationHelpers";
 import { SortOrder } from "mongoose";
+import httpStatus from "http-status";
+import ApiError from "../../../errors/ApiError";
 
 const createFaculty = async (
   payload: IAcademicFaculty
@@ -70,6 +72,9 @@ const getSingleFaculty = async (
   id: string
 ): Promise<IAcademicFaculty | null> => {
   const result = await AcademicFaculty.findById(id);
+  if (!result) {
+    throw new ApiError(httpStatus.NOT_FOUND, "Academic Faculty not found!");
+  }
   return result;
 };
 
@@ -85,6 +90,9 @@ const updateFaculty = async (
 
 const deleteFaculty = async (id: string): Promise<IAcademicFaculty | null> => {
   const result = await AcademicFaculty.findByIdAndDelete({ _id: id });
+  if (!result) {
+    throw new ApiError(httpStatus.NOT_FOUND, "Academic Faculty not found!");
+  }
   return result;
 };
 

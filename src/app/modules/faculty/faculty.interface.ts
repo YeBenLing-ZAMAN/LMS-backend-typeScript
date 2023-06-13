@@ -26,3 +26,14 @@ export type IFaculty = {
 };
 
 export type FacultyModel = Model<IFaculty, Record<string, unknown>>;
+
+export type IFacultyFilters = {
+  searchTeam?: string;
+  id?: string;
+  gender?: string;
+  bloodGroup?: string;
+  email?: string;
+  contactNo?: string;
+  name?: string;
+  emergencyContactNo?: string;
+};
