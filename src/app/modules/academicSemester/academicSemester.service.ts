@@ -102,6 +102,9 @@ const getSingleSemesters = async (
   id: string
 ): Promise<IAcademicSemester | null> => {
   const result = await AcademicSemester.findById(id);
+  if (!result) {
+    throw new ApiError(httpStatus.NOT_FOUND, "Academic Semester not found!");
+  }
   return result;
 };
 
@@ -126,6 +129,9 @@ const deleteSemester = async (
   id: string
 ): Promise<IAcademicSemester | null> => {
   const result = await AcademicSemester.findByIdAndDelete({ _id: id });
+  if (!result) {
+    throw new ApiError(httpStatus.NOT_FOUND, "Academic Semester not found!");
+  }
   return result;
 };
 

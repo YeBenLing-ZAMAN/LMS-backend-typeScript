@@ -102,6 +102,7 @@ const updateFaculty = async (
   });
   return result;
 };
+
 const deleteFaculty = async (id: string): Promise<IFaculty | null> => {
   let deletedFaculty = null;
   const session = await mongoose.startSession();

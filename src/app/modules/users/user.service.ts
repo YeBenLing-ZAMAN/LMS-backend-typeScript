@@ -150,7 +150,7 @@ const createFaculty = async (
 };
 
 const getAllUser = async (): Promise<IUser[] | null> => {
-  const result = await User.find({}).populate("student");
+  const result = await User.find({}).populate("student faculty");
 
   if (!result) {
     throw new Error("Failed to find all user!");

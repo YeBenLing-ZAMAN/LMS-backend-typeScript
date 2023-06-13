@@ -9,6 +9,8 @@ import {
 } from "./academicDepartment.interface";
 import { IPaginationOptions } from "../../../interface.ts/pagination";
 import { IGenericResponse } from "../../../interface.ts/common";
+import httpStatus from "http-status";
+import ApiError from "../../../errors/ApiError";
 
 const getAllDepartments = async (
   filters: IAcademicDepartmentFilters,
@@ -80,6 +82,9 @@ const getSingleDepartment = async (
 ): Promise<IAcademicDepartment | null> => {
   const result = await AcademicDepartment.findById(id);
   // .populate("academicFaculty");   // id see with populated
+  if (!result) {
+    throw new ApiError(httpStatus.NOT_FOUND, "Academic Department not found!");
+  }
   return result;
 };
 
@@ -101,6 +106,9 @@ const deleteDepartment = async (
   id: string
 ): Promise<IAcademicDepartment | null> => {
   const result = await AcademicDepartment.findByIdAndDelete(id);
+  if (!result) {
+    throw new ApiError(httpStatus.NOT_FOUND, "Academic Department not found!");
+  }
   return result;
 };
 
