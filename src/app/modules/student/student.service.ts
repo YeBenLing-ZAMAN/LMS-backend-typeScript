@@ -71,6 +71,10 @@ const getSingleStudent = async (id: string): Promise<IStudent | null> => {
     .populate("academicSemester")
     .populate("academicDepartment")
     .populate("academicFaculty");
+
+  if (!result) {
+    throw new ApiError(httpStatus.NOT_FOUND, "Student not found!");
+  }
   return result;
 };
 
@@ -117,6 +121,7 @@ const updateStudent = async (
   });
   return result;
 };
+
 const deleteStudent = async (id: string): Promise<IStudent | null> => {
   let deletedStudent = null;
   const session = await mongoose.startSession();
