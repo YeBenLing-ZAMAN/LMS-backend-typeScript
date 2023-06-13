@@ -9,6 +9,11 @@ router.post(
   requestValidation.validateRequest(UserValidation.createUserZodSchema),
   UserController.createStudent
 );
+router.post(
+  "/create-faculty",
+  requestValidation.validateRequest(UserValidation.createFacultyZodSchema),
+  UserController.createFaculty
+);
 
 router.get("/get-all-user", UserController.getAllUser);
 
