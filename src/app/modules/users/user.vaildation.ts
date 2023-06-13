@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { bloodGroup, gender } from "../student.validation.ts/student.constants";
+import { bloodGroup, gender } from "../student/student.constants";
 
 const createUserZodSchema = z.object({
   body: z.object({
