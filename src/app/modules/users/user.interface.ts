@@ -7,7 +7,7 @@ export type IUser = {
   password: string;
   student?: Types.ObjectId | IStudent;
   faculty?: Types.ObjectId;
-  // admin?: Types.ObjectId;
+  admin?: Types.ObjectId;
 };
 
 export type UserModel = Model<IUser, Record<string, unknown>>;

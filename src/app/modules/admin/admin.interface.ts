@@ -24,3 +24,14 @@ export type IAdmin = {
 };
 
 export type AdminModel = Model<IAdmin, Record<string, unknown>>;
+
+export type IAdminFilters = {
+  searchTeam?: string;
+  id?: string;
+  gender?: string;
+  bloodGroup?: string;
+  email?: string;
+  contactNo?: string;
+  name?: string;
+  emergencyContactNo?: string;
+};

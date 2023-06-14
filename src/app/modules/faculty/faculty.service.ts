@@ -118,14 +118,14 @@ const deleteFaculty = async (id: string): Promise<IFaculty | null> => {
     const deleteUser = await User.findOneAndDelete({ id }, { session });
 
     if (!deleteUser) {
-      throw new ApiError(httpStatus.BAD_REQUEST, "Failed to delete faculty");
+      throw new ApiError(httpStatus.BAD_REQUEST, "Failed to delete user");
     }
 
     deletedFaculty = await Faculty.findOneAndDelete({ id }, { session })
       .populate("academicDepartment")
       .populate("academicFaculty");
     if (!deletedFaculty) {
-      throw new ApiError(httpStatus.BAD_REQUEST, "Failed to create faculty");
+      throw new ApiError(httpStatus.BAD_REQUEST, "Failed to delete faculty");
     }
 
     await session.commitTransaction();
