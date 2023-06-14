@@ -45,7 +45,7 @@ const index_1 = __importDefault(require("./config/index"));
 const logger_1 = require("./shared/logger");
 /* uncaughtException error handling */
 process.on("uncaughtException", (error) => {
-  logger_1.errorLogger.error("uncaught Exception is detected.....", error);
+  logger_1.console.log("uncaught Exception is detected.....", error);
   process.exit(1);
 });
 let server;
@@ -53,20 +53,18 @@ function DatabaseConnection() {
   return __awaiter(this, void 0, void 0, function* () {
     try {
       yield mongoose_1.default.connect(index_1.default.dataBase_url);
-      logger_1.infoLogger.info(`Database is connected successfully`);
+      logger_1.console.log(`Database is connected successfully`);
       /* port listing from here  */
       app_1.default.listen(index_1.default.port, () => {
-        logger_1.infoLogger.info(
-          `app listening on port ${index_1.default.port}`
-        );
+        logger_1.console.log(`app listening on port ${index_1.default.port}`);
       });
     } catch (err) {
-      logger_1.errorLogger.error(`Fail to connected DB`, err);
+      logger_1.console.log(`Fail to connected DB`, err);
     }
     process.on("unhandledRejection", (error) => {
       if (server) {
         server.close(() => {
-          logger_1.errorLogger.error(error);
+          logger_1.console.log(error);
           process.exit(1);
         });
       } else {
@@ -77,7 +75,7 @@ function DatabaseConnection() {
 }
 DatabaseConnection();
 process.on("SIGTERM", () => {
-  logger_1.infoLogger.info("SIGTERM is received");
+  logger_1.console.log("SIGTERM is received");
   if (server) {
     server.close();
   }

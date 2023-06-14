@@ -21,7 +21,7 @@ const handleCastError_1 = __importDefault(
 const globalErrorHandler = (error, req, res, next) => {
   config_1.default.env === "development"
     ? console.log("global error handler", error)
-    : logger_1.errorLogger.error("globalErrorHandler", error);
+    : logger_1.console.log("globalErrorHandler", error);
   let statusCode = 500;
   let message = "somethings went wrong !";
   let errorMessages = [];
