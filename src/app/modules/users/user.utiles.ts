@@ -17,8 +17,8 @@ export const generatedStudentId = async (
   // increment by one
   let incrementedId = (parseInt(currentId) + 1).toString().padStart(5, "0");
   // 2023
-  incrementedId = `${academicSemester.year.substring(2, 4)}${
-    academicSemester.code
+  incrementedId = `${academicSemester?.year.substring(2, 4)}${
+    academicSemester?.code
   }${incrementedId}`;
   return incrementedId;
 };
