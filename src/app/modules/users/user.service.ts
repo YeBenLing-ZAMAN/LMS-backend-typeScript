@@ -16,6 +16,7 @@ import { IFaculty } from "../faculty/faculty.interface";
 import { Faculty } from "../faculty/faculty.model";
 import { IAdmin } from "../admin/admin.interface";
 import { Admin } from "../admin/admin.model";
+import { IGenericResponse } from "../../../interface.ts/common";
 
 const createStudent = async (
   student: IStudent,
@@ -214,13 +215,21 @@ const createAdmin = async (
   return newUserAllData;
 };
 
-const getAllUser = async (): Promise<IUser[] | null> => {
+const getAllUser = async (): Promise<IGenericResponse<IUser[]>> => {
   const result = await User.find({}).populate("student faculty");
+  const total = await User.countDocuments();
 
   if (!result) {
     throw new Error("Failed to find all user!");
   }
-  return result;
+  return {
+    meta: {
+      page: 1,
+      limit: 1,
+      total,
+    },
+    data: result,
+  };
 };
 
 export const UserService = {
