@@ -6,9 +6,9 @@ import { ILoginUser } from "./auth.interface";
 const login = async (payload: ILoginUser) => {
   const { id, password } = payload;
 
-  const user = new User();
+  const user = new User(); // creating instance of a user.
 
-  // checking user
+  // checking user by custom our created instance methods
   const isUserExist = await user.isUserExist(id);
   if (!isUserExist) {
     throw new ApiError(httpStatus.NOT_FOUND, "User does not exist");
@@ -17,7 +17,7 @@ const login = async (payload: ILoginUser) => {
   // isMatching password
   const isPasswordMatch =
     isUserExist.password &&
-    user.isPasswordMatch(password, isUserExist.password);
+    (await user.isPasswordMatch(password, isUserExist.password));
   if (!isPasswordMatch) {
     throw new ApiError(httpStatus.NOT_FOUND, "Password is incorrect");
   }
