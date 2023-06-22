@@ -43,7 +43,8 @@ const getAllUser = catchAsync(async (req: Request, res: Response) => {
     statusCode: httpStatus.OK,
     success: true,
     message: "Get all user data!",
-    data: result,
+    meta: result.meta,
+    data: result.data,
   });
 });
 
