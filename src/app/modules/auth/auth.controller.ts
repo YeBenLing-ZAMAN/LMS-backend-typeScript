@@ -3,7 +3,7 @@ import catchAsync from "../../../shared/catchAsync";
 import httpStatus from "http-status";
 import sendResponse from "../../../shared/sendResponse";
 import { AuthService } from "./auth.service";
-import { ILoginUserResponse } from "./auth.interface";
+import { ILoginUserResponse, IRefreshTokenResponse } from "./auth.interface";
 import config from "../../../config";
 
 const login = catchAsync(async (req: Request, res: Response) => {
@@ -15,7 +15,7 @@ const login = catchAsync(async (req: Request, res: Response) => {
     secure: config.env === "production" ? true : false,
     httpOnly: true,
   };
-  res.cookie("refresh_token", refreshToken, cookieOptions);
+  res.cookie("refreshToken", refreshToken, cookieOptions);
 
   sendResponse<ILoginUserResponse>(res, {
     statusCode: httpStatus.OK,
@@ -25,6 +25,25 @@ const login = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const refreshToken = catchAsync(async (req: Request, res: Response) => {
+  const { refreshToken } = req.cookies;
+  const result = await AuthService.refreshToken(refreshToken);
+  // set refresh token into cookie
+  const cookieOptions = {
+    secure: config.env === "production" ? true : false,
+    httpOnly: true,
+  };
+  res.cookie("refreshToken", refreshToken, cookieOptions);
+
+  sendResponse<IRefreshTokenResponse>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "user login successfully!",
+    data: result,
+  });
+});
+
 export const AuthController = {
   login,
+  refreshToken,
 };

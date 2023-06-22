@@ -10,6 +10,12 @@ router.post(
   AuthController.login
 );
 
+router.post(
+  "/refresh-token",
+  requestValidation.validateRequest(AuthValidation.refreshTokenZodSchema),
+  AuthController.refreshToken
+);
+
 // router.get("/get-all-user", AuthController.getAllUser);
 
 export const AuthRoutes = router;
