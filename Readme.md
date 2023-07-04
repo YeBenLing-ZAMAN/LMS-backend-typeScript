@@ -1,4 +1,4 @@
-## testing Link: http://localhost:5000
+## testing Link: https://lms-obgp.onrender.com
 
 ## Application Routes:
 
@@ -6,7 +6,7 @@
 
 ---
 
-- http://localhost:5000/api/v1/auth/login (POST)✔
+- https://lms-obgp.onrender.com/api/v1/auth/login (POST)✔
 
 ```javascript
 {
@@ -15,7 +15,7 @@
 }
 ```
 
-- http://localhost:5000/api/v1/user/create-faculty (POST)✔
+- https://lms-obgp.onrender.com/api/v1/user/create-faculty (POST)✔
 
 ```javascript
 {
@@ -41,7 +41,7 @@
 }
 ```
 
-- http://localhost:5000/api/v1/user/create-student (POST)✔
+- https://lms-obgp.onrender.com/api/v1/user/create-student (POST)✔
 
 ```javascript
 {
@@ -82,13 +82,13 @@
 }
 ```
 
-- http://localhost:5000/api/v1/auth/refresh-token (POST)✔ take access token from cookies
+- https://lms-obgp.onrender.com/api/v1/auth/refresh-token (POST)✔ take access token from cookies
 
 ### Auth (admin)
 
 ---
 
-- http://localhost:5000/api/v1/admins/create-admin (POST)✔
+- https://lms-obgp.onrender.com/api/v1/admins/create-admin (POST)✔
 
 ```javascript
 {
@@ -112,7 +112,7 @@
 }
 ```
 
-- http://localhost:5000/api/v1/auth/login (POST)✔
+- https://lms-obgp.onrender.com/api/v1/auth/login (POST)✔
 
 ```javascript
 {
@@ -125,20 +125,20 @@
 
 ---
 
-- http://localhost:5000/api/v1/students (GET) | admin✔
-- http://localhost:5000/api/v1/students/64a3cf87989c22a7262d286f (Single GET) | admin✔
-- http://localhost:5000/api/v1/students/update (PATCH) |student it's self✔
-- http://localhost:5000/api/v1/students/240200001 (PATCH) |admin✔
-- http://localhost:5000/api/v1/students/240200001 (DELETE) |admin✔✔
+- https://lms-obgp.onrender.com/api/v1/students (GET) | admin✔
+- https://lms-obgp.onrender.com/api/v1/students/64a3cf87989c22a7262d286f (Single GET) | admin✔
+- https://lms-obgp.onrender.com/api/v1/students/update (PATCH) |student it's self✔
+- https://lms-obgp.onrender.com/api/v1/students/240200001 (PATCH) |admin✔
+- https://lms-obgp.onrender.com/api/v1/students/240200001 (DELETE) |admin✔✔
 
 ### faculty
 
 ---
 
-- http://localhost:5000/api/v1/faculties (GET) | admin✔
-- http://localhost:5000/api/v1/faculties/649284040fadc99a14c1fb27 (Single GET) | admin✔
-- http://localhost:5000/api/v1/faculties/update (PATCH) |student it's self✔
-- http://localhost:5000/api/v1/faculties/F-00002 (PATCH) |admin✔
+- https://lms-obgp.onrender.com/api/v1/faculties (GET) | admin✔
+- https://lms-obgp.onrender.com/api/v1/faculties/649284040fadc99a14c1fb27 (Single GET) | admin✔
+- https://lms-obgp.onrender.com/api/v1/faculties/update (PATCH) |student it's self✔
+- https://lms-obgp.onrender.com/api/v1/faculties/F-00002 (PATCH) |admin✔
 
 ```javascript
 {
@@ -146,13 +146,13 @@
 }
 ```
 
-- http://localhost:5000/api/v1/faculties/240200001 (DELETE) |admin✔✔
+- https://lms-obgp.onrender.com/api/v1/faculties/240200001 (DELETE) |admin✔✔
 
 ### Management Departments
 
 ---
 
-- http://localhost:5000/api/v1/management-departments/create-management (post) | admin✔
+- https://lms-obgp.onrender.com/api/v1/management-departments/create-management (post) | admin✔
 
 ```javascript
   {
@@ -160,10 +160,10 @@
   }
 ```
 
-- http://localhost:5000/api/v1/management-departments (GET) | admin✔
-- http://localhost:5000/api/v1/management-departments/648927ea5f2a5901dafe6fa2 (Single GET) | admin✔
-- http://localhost:5000/api/v1/management-departments/update (PATCH) |student it's self✔
-- http://localhost:5000/api/v1/management-departments/648927ea5f2a5901dafe6fa2 (PATCH) |admin✔
+- https://lms-obgp.onrender.com/api/v1/management-departments (GET) | admin✔
+- https://lms-obgp.onrender.com/api/v1/management-departments/648927ea5f2a5901dafe6fa2 (Single GET) | admin✔
+- https://lms-obgp.onrender.com/api/v1/management-departments/update (PATCH) |student it's self✔
+- https://lms-obgp.onrender.com/api/v1/management-departments/648927ea5f2a5901dafe6fa2 (PATCH) |admin✔
 
 ```javascript
   {
@@ -171,13 +171,13 @@
   }
 ```
 
-- http://localhost:5000/api/v1/management-departments/648927ea5f2a5901dafe6fa2 (DELETE) |admin✔✔
+- https://lms-obgp.onrender.com/api/v1/management-departments/648927ea5f2a5901dafe6fa2 (DELETE) |admin✔✔
 
 ### Academic Departments
 
 ---
 
-- http://localhost:5000/api/v1/academic-departments/create-department (post) | admin✔
+- https://lms-obgp.onrender.com/api/v1/academic-departments/create-department (post) | admin✔
 
 ```javascript
  {
@@ -186,10 +186,10 @@
 }
 ```
 
-- http://localhost:5000/api/v1/academic-departments (GET) | admin✔
-- http://localhost:5000/api/v1/academic-departments/6486f37649c295c3e3187792 (Single GET) | admin✔
-- http://localhost:5000/api/v1/academic-departments/update (PATCH) |student it's self✔
-- http://localhost:5000/api/v1/academic-departments/6486f37649c295c3e3187792 (PATCH) |admin✔
+- https://lms-obgp.onrender.com/api/v1/academic-departments (GET) | admin✔
+- https://lms-obgp.onrender.com/api/v1/academic-departments/6486f37649c295c3e3187792 (Single GET) | admin✔
+- https://lms-obgp.onrender.com/api/v1/academic-departments/update (PATCH) |student it's self✔
+- https://lms-obgp.onrender.com/api/v1/academic-departments/6486f37649c295c3e3187792 (PATCH) |admin✔
 
 ```javascript
 {
@@ -198,13 +198,13 @@
 }
 ```
 
-- http://localhost:5000/api/v1/students/648927ea5f2a5901dafe6fa2 (DELETE) |admin✔✔
+- https://lms-obgp.onrender.com/api/v1/students/648927ea5f2a5901dafe6fa2 (DELETE) |admin✔✔
 
 ### Academic Semester
 
 ---
 
-- http://localhost:5000/api/v1/academic-semester/create-semester (post) | admin✔
+- https://lms-obgp.onrender.com/api/v1/academic-semester/create-semester (post) | admin✔
 
 ```javascript
 {
@@ -216,13 +216,13 @@
 }
 ```
 
-- http://localhost:5000/api/v1/academic-semester/?page=2&limit=3&sortBy=code&sortOrder=desc (GET) | admin✔
-- http://localhost:5000/api/v1/academic-semester/academic-semester/?searchTeam=fall (GET) | admin✔
-- http://localhost:5000/api/v1/academic-semester/academic-semester/?title=Fall&year=2024 (GET) | admin✔
-- http://localhost:5000/api/v1/academic-semester/academic-semester/?page=1&limit=10&sortBy=code&sortOrder=desc&title=Fall&year=2024 (GET) | admin✔
-- http://localhost:5000/api/v1/academic-semester/6486870d611ddc8fdcb33998 (Single GET) | admin✔
-- http://localhost:5000/api/v1/academic-semester/update (PATCH) |student it's self✔
-- http://localhost:5000/api/v1/academic-semester/6486870d611ddc8fdcb33998 (PATCH) |admin✔
+- https://lms-obgp.onrender.com/api/v1/academic-semester/?page=2&limit=3&sortBy=code&sortOrder=desc (GET) | admin✔
+- https://lms-obgp.onrender.com/api/v1/academic-semester/academic-semester/?searchTeam=fall (GET) | admin✔
+- https://lms-obgp.onrender.com/api/v1/academic-semester/academic-semester/?title=Fall&year=2024 (GET) | admin✔
+- https://lms-obgp.onrender.com/api/v1/academic-semester/academic-semester/?page=1&limit=10&sortBy=code&sortOrder=desc&title=Fall&year=2024 (GET) | admin✔
+- https://lms-obgp.onrender.com/api/v1/academic-semester/6486870d611ddc8fdcb33998 (Single GET) | admin✔
+- https://lms-obgp.onrender.com/api/v1/academic-semester/update (PATCH) |student it's self✔
+- https://lms-obgp.onrender.com/api/v1/academic-semester/6486870d611ddc8fdcb33998 (PATCH) |admin✔
 
 ```javascript
 {
@@ -232,13 +232,13 @@
 }
 ```
 
-- http://localhost:5000/api/v1/academic-semester/6486870d611ddc8fdcb33998 (DELETE) |admin✔✔
+- https://lms-obgp.onrender.com/api/v1/academic-semester/6486870d611ddc8fdcb33998 (DELETE) |admin✔✔
 
 ### Pagination
 
 ---
 
-- http://localhost:5000/api/v1/academic-semester/?page=2&limit=3&sortBy=code&sortOrder=desc (GET) | admin✔
-- http://localhost:5000/api/v1/academic-semester/academic-semester/?searchTeam=fall (GET) | admin✔
-- http://localhost:5000/api/v1/academic-semester/academic-semester/?title=Fall&year=2024 (GET) | admin✔
-- http://localhost:5000/api/v1/academic-semester/academic-semester/?page=1&limit=10&sortBy=code&sortOrder=desc&title=Fall&year=2024 (GET)
+- https://lms-obgp.onrender.com/api/v1/academic-semester/?page=2&limit=3&sortBy=code&sortOrder=desc (GET) | admin✔
+- https://lms-obgp.onrender.com/api/v1/academic-semester/academic-semester/?searchTeam=fall (GET) | admin✔
+- https://lms-obgp.onrender.com/api/v1/academic-semester/academic-semester/?title=Fall&year=2024 (GET) | admin✔
+- https://lms-obgp.onrender.com/api/v1/academic-semester/academic-semester/?page=1&limit=10&sortBy=code&sortOrder=desc&title=Fall&year=2024 (GET)
