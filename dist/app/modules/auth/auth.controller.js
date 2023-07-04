@@ -23,54 +23,57 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserController = void 0;
-const user_service_1 = require("./user.service");
+exports.AuthController = void 0;
 const catchAsync_1 = __importDefault(require("../../../shared/catchAsync"));
 const http_status_1 = __importDefault(require("http-status"));
 const sendResponse_1 = __importDefault(require("../../../shared/sendResponse"));
-const createStudent = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const _a = req.body, { student } = _a, userData = __rest(_a, ["student"]);
-    const result = yield user_service_1.UserService.createStudent(student, userData);
+const auth_service_1 = require("./auth.service");
+const config_1 = __importDefault(require("../../../config"));
+const login = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const loginData = __rest(req.body, []);
+    const result = yield auth_service_1.AuthService.login(loginData);
+    const { refreshToken } = result, others = __rest(result, ["refreshToken"]);
+    // set refresh token into cookie
+    const cookieOptions = {
+        secure: config_1.default.env === "production" ? true : false,
+        httpOnly: true,
+    };
+    res.cookie("refreshToken", refreshToken, cookieOptions);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: "Student created successfully!",
+        message: "user login successfully!",
+        data: others,
+    });
+}));
+const refreshToken = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { refreshToken } = req.cookies;
+    const result = yield auth_service_1.AuthService.refreshToken(refreshToken);
+    // set refresh token into cookie
+    const cookieOptions = {
+        secure: config_1.default.env === "production" ? true : false,
+        httpOnly: true,
+    };
+    res.cookie("refreshToken", refreshToken, cookieOptions);
+    (0, sendResponse_1.default)(res, {
+        statusCode: http_status_1.default.OK,
+        success: true,
+        message: "user login successfully!",
         data: result,
     });
 }));
-const createFaculty = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const _b = req.body, { faculty } = _b, userData = __rest(_b, ["faculty"]);
-    const result = yield user_service_1.UserService.createFaculty(faculty, userData);
+const changePassword = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const user = req.user;
+    const passwordData = __rest(req.body, []);
+    yield auth_service_1.AuthService.changePassword(user, passwordData);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: "Faculty created successfully!",
-        data: result,
+        message: "user password change successfully!",
     });
 }));
-const createAdmin = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const _c = req.body, { admin } = _c, userData = __rest(_c, ["admin"]);
-    const result = yield user_service_1.UserService.createAdmin(admin, userData);
-    (0, sendResponse_1.default)(res, {
-        statusCode: http_status_1.default.OK,
-        success: true,
-        message: "Admin created successfully!",
-        data: result,
-    });
-}));
-const getAllUser = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield user_service_1.UserService.getAllUser();
-    (0, sendResponse_1.default)(res, {
-        statusCode: http_status_1.default.OK,
-        success: true,
-        message: "Get all user data!",
-        meta: result.meta,
-        data: result.data,
-    });
-}));
-exports.UserController = {
-    createStudent,
-    createFaculty,
-    createAdmin,
-    getAllUser,
+exports.AuthController = {
+    login,
+    refreshToken,
+    changePassword,
 };
