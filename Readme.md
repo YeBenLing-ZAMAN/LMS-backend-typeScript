@@ -4,6 +4,8 @@
 
 ### Auth (user login | facility create| student create | admin create )
 
+---
+
 - http://localhost:5000/api/v1/auth/login (POST)✔
 
 ```javascript
@@ -84,6 +86,8 @@
 
 ### Auth (admin)
 
+---
+
 - http://localhost:5000/api/v1/admins/create-admin (POST)✔
 
 ```javascript
@@ -119,6 +123,8 @@
 
 ### student
 
+---
+
 - http://localhost:5000/api/v1/students (GET) | admin✔
 - http://localhost:5000/api/v1/students/64a3cf87989c22a7262d286f (Single GET) | admin✔
 - http://localhost:5000/api/v1/students/update (PATCH) |student it's self✔
@@ -126,6 +132,8 @@
 - http://localhost:5000/api/v1/students/240200001 (DELETE) |admin✔✔
 
 ### faculty
+
+---
 
 - http://localhost:5000/api/v1/faculties (GET) | admin✔
 - http://localhost:5000/api/v1/faculties/649284040fadc99a14c1fb27 (Single GET) | admin✔
@@ -141,6 +149,8 @@
 - http://localhost:5000/api/v1/faculties/240200001 (DELETE) |admin✔✔
 
 ### Management Departments
+
+---
 
 - http://localhost:5000/api/v1/management-departments/create-management (post) | admin✔
 
@@ -164,6 +174,8 @@
 - http://localhost:5000/api/v1/management-departments/648927ea5f2a5901dafe6fa2 (DELETE) |admin✔✔
 
 ### Academic Departments
+
+---
 
 - http://localhost:5000/api/v1/academic-departments/create-department (post) | admin✔
 
@@ -189,6 +201,8 @@
 - http://localhost:5000/api/v1/students/648927ea5f2a5901dafe6fa2 (DELETE) |admin✔✔
 
 ### Academic Semester
+
+---
 
 - http://localhost:5000/api/v1/academic-semester/create-semester (post) | admin✔
 
@@ -221,6 +235,8 @@
 - http://localhost:5000/api/v1/academic-semester/6486870d611ddc8fdcb33998 (DELETE) |admin✔✔
 
 ### Pagination
+
+---
 
 - http://localhost:5000/api/v1/academic-semester/?page=2&limit=3&sortBy=code&sortOrder=desc (GET) | admin✔
 - http://localhost:5000/api/v1/academic-semester/academic-semester/?searchTeam=fall (GET) | admin✔
