@@ -9,6 +9,9 @@ const UserSchema = new Schema<IUser, Record<string, never>, IUserMethods>(
     role: { type: String, required: true },
     password: { type: String, required: true },
     needsPasswordChange: { type: Boolean, default: true },
+    passwordChangeAt: {
+      type: Date,
+    },
     student: { type: Schema.Types.ObjectId, ref: "Student" },
     faculty: { type: Schema.Types.ObjectId, ref: "Faculty" },
     admin: { type: Schema.Types.ObjectId, ref: "Admin" },
