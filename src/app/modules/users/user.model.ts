@@ -7,8 +7,11 @@ const UserSchema = new Schema<IUser, Record<string, never>, IUserMethods>(
   {
     id: { type: String, required: true, unique: true },
     role: { type: String, required: true },
-    password: { type: String, required: true },
+    password: { type: String, required: true, select: 0 },
     needsPasswordChange: { type: Boolean, default: true },
+    passwordChangeAt: {
+      type: Date,
+    },
     student: { type: Schema.Types.ObjectId, ref: "Student" },
     faculty: { type: Schema.Types.ObjectId, ref: "Faculty" },
     admin: { type: Schema.Types.ObjectId, ref: "Admin" },
@@ -27,6 +30,9 @@ UserSchema.pre("save", async function (next) {
     this.password,
     Number(config.bcrypt_salt_rounds)
   );
+  if (!this.needsPasswordChange) {
+    this.passwordChangeAt = new Date();
+  }
   next();
 });
 
