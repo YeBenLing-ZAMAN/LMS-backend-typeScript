@@ -241,4 +241,4 @@
 - http://localhost:5000/api/v1/academic-semester/?page=2&limit=3&sortBy=code&sortOrder=desc (GET) | admin✔
 - http://localhost:5000/api/v1/academic-semester/academic-semester/?searchTeam=fall (GET) | admin✔
 - http://localhost:5000/api/v1/academic-semester/academic-semester/?title=Fall&year=2024 (GET) | admin✔
-- http://localhost:5000/api/v1/academic-semester/academic-semester/?page=1&limit=10&sortBy=code&sortOrder=desc&title=Fall&year=2024 (GET
+- http://localhost:5000/api/v1/academic-semester/academic-semester/?page=1&limit=10&sortBy=code&sortOrder=desc&title=Fall&year=2024 (GET)
