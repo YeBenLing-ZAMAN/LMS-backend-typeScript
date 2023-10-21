@@ -12,10 +12,20 @@ import { offeredCourseClassScheduleRoutes } from '../modules/offeredCourseClassS
 import { studentEnrolledCourseRoutes } from '../modules/studentEnrolledCourse/studentEnrolledCourse.routes';
 import { studentEnrolledCourseMarkRoutes } from '../modules/studentEnrolledCourseMark/studentEnrolledCourseMark.routes';
 import { studentSemesterPaymentRoutes } from '../modules/studentSemesterPayment/studentSemesterPayment.routes';
+import { userRoutes } from '../modules/user/user.routes';
+import { authRoutes } from '../modules/auth/auth.routes';
+import { facultyRoutes } from '../modules/faculty/faculty.routes';
+import { managementDepartmentRoutes } from '../modules/managementDepartment/managementDepartment.routes';
+import { adminRoutes } from '../modules/admin/admin.routes';
+import { studentRoutes } from '../modules/student/student.routes';
 
 const router = express.Router();
 
 const moduleRoutes = [
+  { path: '/auth', routes: authRoutes },
+  { path: '/users', routes: userRoutes },
+  { path: '/faculties', routes: facultyRoutes },
+  { path: '/students', routes: studentRoutes },
   { path: '/academic-faculties', routes: academicFacultyRoutes },
   { path: '/academic-departments', routes: academicDepartmentRoutes },
   { path: '/academic-semesters', routes: academicSemesterRoutes },
@@ -28,7 +38,9 @@ const moduleRoutes = [
   { path: '/offered-course-class-schedules', routes: offeredCourseClassScheduleRoutes },
   { path: '/student-enrolled-courses', routes: studentEnrolledCourseRoutes },
   { path: '/student-enrolled-course-marks', routes: studentEnrolledCourseMarkRoutes },
-  { path: '/student-semester-payments', routes: studentSemesterPaymentRoutes }
+  { path: '/student-semester-payments', routes: studentSemesterPaymentRoutes },
+  { path: '/management-departments', routes: managementDepartmentRoutes },
+  { path: '/admins', routes: adminRoutes }
 ];
 
 moduleRoutes.forEach((route) => {
