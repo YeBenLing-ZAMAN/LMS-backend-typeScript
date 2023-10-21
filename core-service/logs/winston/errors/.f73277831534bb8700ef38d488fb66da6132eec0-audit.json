@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\FILE 2\\programming code\\apollo course\\mil-03\\LMS-auth-srvice\\core-service\\logs\\winston\\errors\\.f73277831534bb8700ef38d488fb66da6132eec0-audit.json",
+    "files": [
+        {
+            "date": 1697873203798,
+            "name": "D:\\FILE 2\\programming code\\apollo course\\mil-03\\LMS-auth-srvice\\core-service\\logs\\winston\\errors\\phu-2023-21-10-13-error.log",
+            "hash": "d6d75723ff1336178da2abeef13569d49be13df1abdc5c217b7ac9db5d289193"
+        }
+    ],
+    "hashType": "sha256"
+}
