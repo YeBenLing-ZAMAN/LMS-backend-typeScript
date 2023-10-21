@@ -1,7 +1,3 @@
-```bash
-cd core-service
-```
-
 1. `Install project dependencies:` Next, install the project dependencies by running the following command:
 
 ```bash
