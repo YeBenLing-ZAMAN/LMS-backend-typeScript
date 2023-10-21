@@ -1,7 +1,9 @@
 {
-  "name": "project-auth-management-service",
+  "name": "auth-management-service",
   "version": "1.0.0",
   "description": "",
+  "author": "kamruzzaman",
+  "license": "ISC",
   "engines": {
     "node": ">=16"
   },
@@ -16,8 +18,6 @@
     "lint-prettier": "yarn lint:check && yarn prettier:check",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "kamruzzaman",
-  "license": "ISC",
   "lint-staged": {
     "src/**/*.ts": "yarn lint-prettier"
   },
