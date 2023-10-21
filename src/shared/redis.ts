@@ -1,6 +1,5 @@
 import { SetOptions, createClient } from "redis";
 import config from "../config";
-// import { errorLogger, infoLogger } from "./logger";
 
 const redisClient = createClient({
   url: config.redis.url,
@@ -20,9 +19,6 @@ const redisSubClient = createClient({
 // redisPubClient.on("connect", (err) => errorLogger.info("Redis pub connected", err));
 // redisSubClient.on("error", (err) => infoLogger.error("RedisError sub", err));
 // redisSubClient.on("connect", (err) => errorLogger.info("Redis sub connected", err));
-
-redisClient.on("error", (err) => console.warn("RedisError", err));
-redisClient.on("connect", (err) => console.log("Redis connected", err));
 
 const connect = async (): Promise<void> => {
   await redisClient.connect();
